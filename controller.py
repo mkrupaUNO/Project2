@@ -73,14 +73,14 @@ class Controller(QMainWindow, Ui_MainWindow, QLineEdit):
 
     def percentage(self):
         """
-        Function that runs when the percentage button is pressed, and it moves the decimal place over 2 to the left
+        Function that runs when the percentage button is pressed, and it moves the decimal place over 2 to the right
         """
         if self.number_one != 'Error' and self.number_two != '':
             if self.number_one != '-' and self.number_two != '-':
                 if self.number_active == 'one':
-                    self.number_one = str(float(self.number_one) * 100)
+                    self.number_one = str(float(self.number_one) / 100)
                 else:
-                    self.number_two = str(float(self.number_two) * 100)
+                    self.number_two = str(float(self.number_two) / 100)
                 self.update_label()
 
     def divide(self):
